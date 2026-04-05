@@ -1,7 +1,7 @@
 ---
 name: spec-driven-development
 author: Bowofade Oyerinde (@oyenet1) — Bonifade Technologies
-description: "Specification-Driven Development (SDD) workflow — takes any vague requirement or feature idea and transforms it into structured, implementation-ready specs. Use when the user says 'spec this', 'create requirements', 'write a spec', 'plan this feature', 'SDD', 'spec driven', 'specification', 'requirements doc', 'design doc', 'task list', 'break this down', 'plan this', 'refine this idea', 'turn this into tasks', or when they describe a feature they want to build. Also use when working with .fade/specs directories or any specification workflow. Even if the user just says 'I want to build X' — use this skill to capture and structure their intent before coding."
+description: "Specification-Driven Development (SDD) workflow — takes any vague requirement or feature idea and transforms it into structured, implementation-ready specs. Use when the user says 'spec this', 'create requirements', 'write a spec', 'plan this feature', 'SDD', 'spec driven', 'specification', 'requirements doc', 'design doc', 'task list', 'break this down', 'plan this', 'refine this idea', 'turn this into tasks', or when they describe a feature they want to build. Also use when working with prd directories or any specification workflow. Even if the user just says 'I want to build X' — use this skill to capture and structure their intent before coding."
 ---
 
 <!--
@@ -26,7 +26,7 @@ This skill transforms vague ideas into structured, implementation-ready specific
 2. **design.md** — How to build it (architecture + interfaces + data model)
 3. **tasks.md** — What to do first (ordered, dependency-aware implementation checklist)
 
-**CRITICAL: All specs MUST be written to actual files on disk — never just printed as chat output.** Create the directory `.fade/specs/<feature-name>/` and write each artifact as a real file inside it. The user should be able to open and read these files in their editor after generation. If you only output specs as text in the conversation without creating files, you have failed the task.
+**CRITICAL: All specs MUST be written to actual files on disk — never just printed as chat output.** Create the directory `prd/<feature-name>/` and write each artifact as a real file inside it. The user should be able to open and read these files in their editor after generation. If you only output specs as text in the conversation without creating files, you have failed the task.
 
 ---
 
@@ -171,7 +171,7 @@ Rules:
 
 ---
 
-## Phase 5: Generate Config (`.config.fade`)
+## Phase 5: Generate Config (`.config.prd`)
 
 Create a JSON metadata file:
 
@@ -190,23 +190,23 @@ Generate the UUID using `crypto.randomUUID()` or equivalent.
 Follow this exact procedure for every SDD run:
 
 1. Derive `<feature-name>` as a kebab-case slug from the feature description (e.g., "user notifications" → `user-notifications`)
-2. Create the directory: `mkdir -p .fade/specs/<feature-name>/`
+2. Create the directory: `mkdir -p prd/<feature-name>/`
 3. Write each artifact as a file using the file creation tool:
-   - `.fade/specs/<feature-name>/.config.fade`
-   - `.fade/specs/<feature-name>/requirements.md`
-   - `.fade/specs/<feature-name>/design.md`
-   - `.fade/specs/<feature-name>/tasks.md`
+   - `prd/<feature-name>/.config.prd`
+   - `prd/<feature-name>/requirements.md`
+   - `prd/<feature-name>/design.md`
+   - `prd/<feature-name>/tasks.md`
 4. After creating files, confirm to the user with the full path to the spec directory
 
 ```
-.fade/specs/<feature-name>/
-├── .config.fade        ← metadata (UUID, workflow type)
+prd/<feature-name>/
+├── .config.prd        ← metadata (UUID, workflow type)
 ├── requirements.md     ← user stories + acceptance criteria
 ├── design.md           ← architecture + components + data model
 └── tasks.md            ← ordered implementation checklist
 ```
 
-- If the project already has `.fade/specs/`, use it; otherwise create it
+- If the project already has `prd/`, use it; otherwise create it
 - If a spec with the same name exists, ask before overwriting
 - For partial workflows (only one artifact requested), still create the directory and write the file(s) to disk
 
