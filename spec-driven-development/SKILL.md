@@ -238,3 +238,4 @@ Report findings as a numbered list with severity (Critical / Warning / Info).
 For detailed templates, examples, and writing guidelines, read:
 - `references/writing-guide.md` — exact file templates, good/bad examples, formatting rules
 - `references/methodology.md` — SDD philosophy and quality checklists
+- `references/prompting-guide.md` — how to prompt for the best spec output (templates, power tips, what to avoid)
