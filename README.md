@@ -22,10 +22,44 @@ Generates:
 - Course metadata and timeline (weeks + study hours)
 - Chapter and lesson breakdown in dependency order
 - Page-by-page teaching content with beginner-friendly examples
-- Exercises (minimum 3 per chapter) and assignments (minimum 5 per course)
+- Exercises (minimum 3 per chapter) and assignments (minimum 5 per chapter)
 - Project portfolio by track (frontend/backend/fullstack) with realtime/WebSocket coverage
 
 Grounds outputs using roadmap.sh, official framework docs, and optional supplementary references.
+
+Intake it handles:
+- Topic confirmation (programming/technology)
+- Course type (`frontend`, `backend`, `fullstack`)
+- Framework stack (max 2) with language auto-resolution
+- AI-driven development preference
+- Duration (`weeks x hours/week`) and workload warning when too short
+
+Built-in guarantees:
+- Foundations-first learning path before project work
+- Strict prerequisite ordering (e.g. HTML -> CSS -> JS/TS)
+- Backend/fullstack early architecture modules (UML, DB design, system design)
+- DevOps module before final projects
+- Distinct end-of-course projects with societal/business usefulness
+
+Final output order:
+1. Course Metadata
+2. Course Content Summary (Chapter Outline)
+3. Detailed Pages by Chapter
+4. Exercises and Assignments
+5. Project Portfolio
+6. Tools and Deployment Plan
+7. Learning Milestones by Week
+
+Reference files:
+- [course-creator/SKILL.md](./course-creator/SKILL.md)
+- [course-creator/references/course-blueprint.md](./course-creator/references/course-blueprint.md)
+- [course-creator/references/tech-mapping.md](./course-creator/references/tech-mapping.md)
+- [course-creator/references/pdf-derived-roadmap-notes.md](./course-creator/references/pdf-derived-roadmap-notes.md)
+
+Example prompt:
+```text
+Create a 12-week fullstack course for a beginner using Nuxt.js + Hono.js, 8 hours/week, AI-driven development enabled. Make it project-based, include at least 7 projects, and ensure one project uses WebSockets.
+```
 
 **Install:**
 ```bash
