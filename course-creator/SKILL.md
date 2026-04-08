@@ -630,6 +630,9 @@ PDF formatting requirements:
 - Monospace font (code blocks): **JetBrains Mono** or **Fira Code** — size 10pt
 - Code blocks use a light shaded background (`#F4F4F5` or equivalent)
 - Code blocks include language labels
+- Code block border: subtle left border (`3px solid #D1D5DB`) to visually separate code from body text
+- Code blocks must NOT break across pages unless the code sample itself exceeds one full page — if a code block fits on the remaining space of the current page, keep it there; if it does not fit, push it to the next page and start it fresh
+- Code blocks that genuinely exceed one full page are the only exception and may continue onto the following page
 - Line height: 1.6 for body text, 1.4 for code blocks
 - Preserve indentation and line breaks exactly in all code blocks
 - Table headers: left-aligned, bold, with a light shaded background (`#E8E8EA` or equivalent)
