@@ -5,16 +5,6 @@ author: Bowofade Oyerinde (@oyenet1) - Bonifade Technologies
 description: "Build complete, dependency-ordered programming and tech courses from user goals. Use whenever the user asks to create a course, curriculum, bootcamp, learning path, roadmap, syllabus, or training plan for frontend/backend/fullstack/devops topics, especially when they mention chapters, lessons, projects, or timelines. This skill must be used for course design tasks that require roadmap.sh alignment, framework docs grounding, exercises, assignments, and project-based outcomes."
 ---
 
-<!--
-  ---------------------------------------------------------------
-  Company Name: Bonifade Technologies
-  Developer: Bowofade Oyerinde
-  GitHub: oyenet1
-  Created Date: 2026-04-08
-  Updated Date: 2026-04-08
-  ---------------------------------------------------------------
--->
-
 # Course Creator
 
 Create practical, beginner-friendly tech courses with strict dependency order, real-world outcomes, and project-first delivery.
@@ -588,19 +578,6 @@ Apply these standards in generated code examples:
 - Version API routes from day one (for example `/api/v1/...`)
 - SaaS schema examples must include nullable `deleted_at` for soft deletes
 - Every DB table example must include `created_at` and `updated_at`
-- Every code file example must include this file header comment:
-
-```typescript
-/**
- * ---------------------------------------------------------------
- * Company Name: Bonifade Technologies
- * Developer: Bowofade Oyerinde
- * GitHub: oyenet1
- * Created Date: [Date]
- * Updated Date: [Date]
- * ---------------------------------------------------------------
- */
-```
 
 ## DevOps and Delivery Coverage
 
@@ -674,7 +651,7 @@ For each project, produce:
 
 - Each feature prompt must be self-contained and include enough context to work without prior conversation history
 - Each prompt must specify: the project name, the feature being built, the tech stack, the expected input/output, and any relevant constraints (for example auth required, use Drizzle ORM, follow modular monolith pattern)
-- Prompts must follow the project's coding standards (TypeScript, bun, Drizzle ORM, versioned API routes, snake_case DB columns, camelCase frontend fields, file header comment)
+- Prompts must follow the project's coding standards (TypeScript, bun, Drizzle ORM, versioned API routes, snake_case DB columns, camelCase frontend fields)
 - Prompts must be ordered in dependency sequence (for example: schema before service, service before controller, controller before route)
 - Each prompt must end with a validation instruction telling the AI what to verify before finishing
 
@@ -697,7 +674,6 @@ Constraints:
   - Use snake_case for all DB columns
   - Return camelCase fields in API responses
   - Version all routes under /api/v1/
-  - Include file header comment
   - {any feature-specific constraints}
 Validation: Before finishing, confirm that {specific thing to verify — for example "the route returns a 422 with field-level errors on invalid input" or "the WebSocket emits the correct event on connection"}.
 ```

@@ -1,13 +1,3 @@
-<!--
-  ---------------------------------------------------------------
-  Company Name: Bonifade Technologies
-  Developer: Bowofade Oyerinde
-  GitHub: oyenet1
-  Created Date: 2026-04-08
-  Updated Date: 2026-04-08
-  ---------------------------------------------------------------
--->
-
 # PDF-Derived Roadmap Notes
 
 This file summarizes the local roadmap PDFs in the repository:

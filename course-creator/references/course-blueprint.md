@@ -1,13 +1,3 @@
-<!--
-  ---------------------------------------------------------------
-  Company Name: Bonifade Technologies
-  Developer: Bowofade Oyerinde
-  GitHub: oyenet1
-  Created Date: 2026-04-08
-  Updated Date: 2026-04-08
-  ---------------------------------------------------------------
--->
-
 # Course Blueprint Reference
 
 Use this blueprint to build final course outputs.
@@ -174,7 +164,7 @@ Per project, include:
 1. One project overview prompt (full context: name, goal, stack, architecture, features list)
 2. One feature prompt per feature, ordered by dependency (schema → service → controller → route)
 
-Each feature prompt must be self-contained and include: project name, feature name, stack, context, task, requirements, constraints (TypeScript, bun, Drizzle ORM, modular monolith, snake_case DB, camelCase API response, versioned routes, file header comment), and a validation instruction.
+Each feature prompt must be self-contained and include: project name, feature name, stack, context, task, requirements, constraints (TypeScript, bun, Drizzle ORM, modular monolith, snake_case DB, camelCase API response, versioned routes), and a validation instruction.
 
 ## 6) Tooling and Delivery
 
