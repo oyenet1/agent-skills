@@ -632,6 +632,8 @@ PDF formatting requirements:
 - Code blocks include language labels
 - Line height: 1.6 for body text, 1.4 for code blocks
 - Preserve indentation and line breaks exactly in all code blocks
+- Table headers: left-aligned, bold, with a light shaded background (`#E8E8EA` or equivalent)
+- Table body cells: left-aligned
 
 If PDF generation is unavailable:
 - Output fully structured markdown with the same sections
