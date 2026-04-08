@@ -58,6 +58,21 @@ Where: {where in a real codebase or system this lives}
 
 This applies to every term, every system design concept, every DSA concept, every DevOps concept, every database concept, and every API concept.
 
+### Contextual Placement Rule
+
+Every concept must be taught inside the lesson where it is first used in practice. Never introduce a concept in isolation or in a standalone glossary lesson disconnected from implementation.
+
+Examples:
+- Middleware → teach inside the authentication/authorization lesson
+- JWT → teach inside the login endpoint lesson when tokens are first issued
+- CORS → teach when the frontend first calls the backend and gets blocked
+- Redis → teach when caching a slow query or storing session data
+- Indexes → teach when designing the first searchable table column
+- Rate Limiting → teach when protecting a login or sensitive endpoint
+- Docker → teach in the deployment preparation lesson
+
+See the `Contextual Concept Placement` section in `SKILL.md` for the full placement map.
+
 Every lesson must end with a `References` block:
 ```
 References:

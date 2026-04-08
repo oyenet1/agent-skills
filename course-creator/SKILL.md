@@ -220,7 +220,76 @@ Every course must follow this path:
 
 For each project, include a `Prerequisite Map` showing which chapter/lesson skills are required.
 
-## Content Pipeline
+## Contextual Concept Placement (MANDATORY)
+
+Every concept, term, library, tool, or pattern MUST be introduced and explained at the exact point in the course where it is first needed in practice — not before, not in a standalone glossary chapter.
+
+### The rule
+
+Do not define a concept in isolation. Teach it inside the lesson where the learner will actually use it.
+
+Examples of correct placement:
+- **Middleware** — explain when teaching authentication or authorization, not in a general "what is middleware" lesson disconnected from use
+- **JWT** — explain when building the login endpoint and issuing tokens, not in a standalone "what is JWT" lesson
+- **Indexes** — explain when the learner writes their first slow query or designs a table with a searchable column
+- **Redis** — explain when introducing caching or session storage, not as a standalone database lesson
+- **CORS** — explain when the frontend first tries to call the backend API and gets blocked
+- **Transactions** — explain when writing a feature that requires multiple DB writes that must all succeed or all fail
+- **Foreign Keys** — explain when designing the first relational table that references another table
+- **Environment Variables** — explain when the learner first needs to store a secret (DB password, API key)
+- **Docker** — explain when the learner is preparing to deploy their first application
+- **Rate Limiting** — explain when building an auth endpoint that could be brute-forced
+- **Webhooks** — explain when integrating a payment provider or third-party service
+- **Pub/Sub** — explain when building a feature that requires notifying multiple parts of the system of an event
+- **Big O** — explain when the learner writes their first loop over a large dataset and performance becomes relevant
+
+### How to apply this
+
+When writing a lesson that requires a supporting concept:
+1. Introduce the supporting concept inline at the top of that lesson
+2. Apply Why/What/When/Where for the supporting concept right there
+3. Then proceed to the implementation that uses it
+
+Never say "we covered this earlier in the glossary" — if the concept has not been used in practice yet, treat this as its first real introduction regardless of whether it was mentioned before.
+
+### Concept-to-lesson placement map
+
+Use this as a guide for where key concepts belong:
+
+| Concept | Teach inside this lesson/context |
+|---------|----------------------------------|
+| Middleware | Authentication / Authorization implementation |
+| JWT | Login endpoint — issuing and verifying tokens |
+| OAuth | Social login implementation |
+| CORS | First frontend-to-backend API call |
+| Environment Variables | First secret or config value needed (DB URL, API key) |
+| Hashing (bcrypt/argon2) | User registration — storing passwords |
+| Sessions / Cookies | Session-based auth implementation |
+| Rate Limiting | Login or sensitive endpoint protection |
+| Redis | Caching a slow query or storing session data |
+| Indexes | First table with a searchable or filterable column |
+| Transactions | Any feature requiring multiple DB writes atomically |
+| Foreign Keys | First relational table design |
+| Migrations | First schema change after initial setup |
+| Soft Deletes | First delete feature in a SaaS context |
+| Webhooks | First third-party integration (payment, email provider) |
+| Message Queue / BullMQ | First background job (email sending, report generation) |
+| WebSockets / Socket.io | First realtime feature (chat, notifications, live updates) |
+| Docker | Deployment preparation lesson |
+| CI/CD | First automated deployment pipeline |
+| CDN | Static asset delivery or image optimization lesson |
+| Big O Notation | First loop over a large dataset or search implementation |
+| Pagination | First endpoint returning a list of records |
+| N+1 Problem | First use of a relational query with joins or associations |
+| Eager Loading | Immediately after introducing the N+1 problem |
+| CSRF | Form submission or cookie-based auth implementation |
+| XSS | Frontend rendering of user-generated content |
+| SQL Injection | First raw or parameterized query lesson |
+| API Versioning | First breaking change or second iteration of an API |
+| Monolith vs Microservices | Architecture decision lesson before project planning |
+| Feature Flags | Advanced deployment or A/B testing lesson |
+
+
 
 Lesson requirements for every lesson:
 - `Terms and Terminology`
@@ -860,6 +929,7 @@ Before sending the course, verify:
 - At least one realtime/WebSocket project exists
 - Backend/fullstack includes UML + ERD + DB design + system design + DSA chapters
 - Every concept in every lesson has Why/What/When/Where answered
+- Every concept is introduced at the point of first practical use — not in isolation (see Contextual Concept Placement map)
 - System design chapter uses problem-first pattern for every topic (slow site → root cause → solution)
 - System design covers: caching/Redis, CDN, indexing, queues, rate limiting, load balancing, replication, API versioning, monolith vs microservices
 - DSA chapter covers: arrays, hash maps, stacks, queues, binary search, sorting, Big O, search example, practical math
